@@ -1,0 +1,13 @@
+torch
+transformers
+datasets
+gradio
+Pillow
+pytesseract
+soundfile
+git+https://github.com/huggingface/transformers.git
+numpy
+datasets
+speechbrain
+soundfile
+librosa
