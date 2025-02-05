@@ -87,14 +87,7 @@ npm start
    - Track word and character count
    - Save or share results
 
-## 🛠️ Technical Stack
 
-- **Frontend**: React.js, Material-UI
-- **OCR Engine**: Tesseract.js
-- **TTS Engine**: Web Speech API
-- **Authentication**: JWT
-- **Storage**: MongoDB
-- **API**: RESTful architecture
 
 ## 🔒 Security Features
 
@@ -122,15 +115,9 @@ We welcome contributions! Please follow these steps:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📞 Contact
-
-For support or inquiries:
-- Email: [contact@audex.com](mailto:contact@audex.com)
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ---
-
-Made with ❤️ by the AudeX Team
