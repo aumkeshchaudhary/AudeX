@@ -4,42 +4,42 @@
 
 Transform images into natural speech with AudeX, a powerful web application that combines state-of-the-art OCR and TTS technologies to make content more accessible.
 
-## ✨ Features
+##  Features
 
-### 🔍 Advanced OCR Capabilities
+###  Advanced OCR Capabilities
 - Multi-language text recognition powered by Tesseract
 - High-accuracy extraction from various image formats
 - Support for complex document layouts
 - Real-time text detection and processing
 
-### 🗣️ Text-to-Speech Excellence
+###  Text-to-Speech Excellence
 - Natural voice synthesis using Web Speech API
 - Multiple language and voice options
 - Adjustable speech rate and pitch
 - Real-time text-to-speech conversion
 
-### 📊 Document Management
+###  Document Management
 - PDF export functionality
 - Word and character count analytics
 - Advanced keyword search capabilities
 - Document history tracking
 - Batch processing support
 
-### 👤 User Management
+###  User Management
 - Secure user authentication
 - Personalized user profiles
 - Activity history tracking
 - Customizable user preferences
 - Profile data management
 
-### 💻 User Interface
+###  User Interface
 - Clean, responsive design
 - Intuitive navigation system
 - Drag-and-drop file upload
 - Progress indicators
 - Mobile-friendly layout
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 ```bash
@@ -89,7 +89,7 @@ npm start
 
 
 
-## 🔒 Security Features
+##  Security Features
 
 - Secure user authentication
 - Encrypted data storage
@@ -97,7 +97,7 @@ npm start
 - Session management
 - Regular security updates
 
-## 📱 Mobile Support
+##  Mobile Support
 
 The application is fully responsive and supports:
 - iOS devices
@@ -105,7 +105,7 @@ The application is fully responsive and supports:
 - Tablets
 - Desktop browsers
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -116,7 +116,7 @@ We welcome contributions! Please follow these steps:
 5. Open a Pull Request
 
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
