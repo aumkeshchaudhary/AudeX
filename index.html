@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audex - OCR + TTS</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <span class="close-btn" onclick="closeNav()">&times;</span>
+        <a href="#" onclick="showSection('home'); closeNav()">Home</a>
+        <a href="#" onclick="showSection('about'); closeNav()">About</a>
+        <a href="#" onclick="showSection('usage'); closeNav()">Usage</a>
+        <a href="#" onclick="showSection('help'); closeNav()">Help</a>
+        <a href="#" onclick="showSection('login'); closeNav()">Login</a>
+        <a href="#" onclick="showSection('profile'); closeNav()">Profile</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <div style="display: flex; align-items: center;">
+                <span class="menu-btn" onclick="openNav()">☰</span>
+                <h1 style="margin-left: 15px;">Audex</h1>
+            </div>
+            <nav>
+                <a onclick="showSection('home')">Home</a>
+                <a onclick="showSection('about')">About</a>
+                <a onclick="showSection('usage')">Usage</a>
+                <a onclick="showSection('help')">Help</a>
+                <a onclick="showSection('login')">Login</a>
+                <a onclick="showSection('profile')">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sections -->
+    <section id="home" class="intro active">
+        <div class="container">
+            <h2>Welcome to Audex</h2>
+            <p>Seamlessly converting images to text and synthesizing natural-sounding voices. Enhance accessibility with cutting-edge OCR and TTS technologies.</p>
+            <button onclick="showSection('upload')">Get Started</button>
+        </div>
+    </section>
+
+    <section id="about" class="intro">
+        <div class="container">
+            <h2>About Audex</h2>
+            <p>Audex combines advanced OCR and TTS technology to provide an accessible solution for converting text into speech and making images readable.</p>
+            <p><strong>Concept:</strong> Audex is built upon state-of-the-art Optical Character Recognition (OCR) algorithms that extract text from images with unmatched accuracy. These extracted texts are then processed through advanced Text-to-Speech (TTS) systems to create human-like voices for accessibility and usability.</p>
+            <p><strong>Methodology:</strong> The OCR engine utilizes machine learning models trained on diverse datasets to ensure precision in text extraction across various languages and font types. Meanwhile, the TTS system is powered by neural network-based voice synthesis technology, ensuring natural intonation and clarity.</p>
+            <ul style="text-align: left; margin: 20px auto; max-width: 600px;">
+                <li>Extract text from images with precision</li>
+                <li>Listen to text in natural-sounding voices</li>
+                <li>Accessible and easy-to-use interface</li>
+                <li>Customizable voice settings for user preferences</li>
+                <li>Support for multiple languages and accents</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="usage" class="intro">
+        <div class="container">
+            <h2>How to Use Audex</h2>
+            <p>1. Upload an image containing text.<br>2. Click on the "Process" button.<br>3. Listen to the text synthesized into a natural voice.</p>
+            <button onclick="showSection('upload')">Try It Now</button>
+        </div>
+    </section>
+
+    <section id="upload" class="intro">
+        <div class="container">
+            <h2>Upload Image</h2>
+            <input type="file" id="fileInput" accept="image/*">
+            <select id="languageSelect">
+                <option value="eng">English</option>
+                <option value="spa">Spanish</option>
+                <option value="fra">French</option>
+                <option value="deu">German</option>
+                <option value="ita">Italian</option>
+                <!-- Add more languages as needed -->
+            </select>
+            <button onclick="processImage()">Process</button>
+            <textarea id="outputText" placeholder="Extracted text will appear here..."></textarea>
+            <button onclick="playText()">Play Text</button>
+            <button onclick="stopText()">Stop Text</button>
+            <button onclick="downloadTextAsPDF()">Download Text as PDF</button>
+            <button onclick="countWordsAndCharacters()">Count Words and Characters</button>
+            <input type="text" id="keywordInput" placeholder="Enter keyword to search">
+            <button onclick="searchKeyword()">Search Keyword</button>
+        </div>
+    </section>
+
+    <section id="help" class="help-section">
+        <div class="container">
+            <h3>Need Help?</h3>
+            <p>Contact our support team for assistance with OCR or TTS functionality.</p>
+            <button onclick="contact()">Contact Us</button>
+            <p>If you encounter any issues or need assistance, please refer to the following:</p>
+            <ul>
+                <li>Check your internet connection to ensure smooth functionality.</li>
+                <li>Ensure your image file is clear and text is legible for OCR processing.</li>
+                <li>Refer to the FAQ for commonly asked questions.</li>
+                <li>Contact our support team for additional help at <a href="mailto:support@audex.com" style="color: #fff; text-decoration: underline;">support@audex.com</a>.</li>
+            </ul>
+            <p>We’re here to ensure your experience with Audex is seamless and efficient!</p>
+        </div>
+    </section>
+
+    <section id="login" class="intro">
+        <div class="container">
+            <h2>Login</h2>
+            <p>Access your personalized Audex experience by logging in.</p>
+            <input type="email" id="email" placeholder="Enter your email">
+            <input type="password" id="password" placeholder="Enter your password">
+            <button onclick="login()">Login</button>
+            <p class="toggle">Don't have an account? <a href="#" onclick="showSection('signup')">Sign up here</a>.</p>
+        </div>
+    </section>
+
+    <section id="signup" class="intro">
+        <div class="container">
+            <h2>Sign Up</h2>
+            <p>Create your Audex account to get started.</p>
+            <input type="text" id="signupName" placeholder="Full Name">
+            <input type="email" id="signupEmail" placeholder="Email Address">
+            <input type="password" id="signupPassword" placeholder="Password">
+            <input type="password" id="signupRePassword" placeholder="Re-type Password">
+            <input type="text" id="signupCountry" placeholder="Country">
+            <input type="date" id="signupDob" placeholder="Date of Birth">
+            <input type="text" id="signupAddress" placeholder="Address">
+            <input type="tel" id="signupPhone" placeholder="Phone Number">
+            <button onclick="signup()">Sign Up</button>
+            <p class="toggle">Already have an account? <a href="#" onclick="showSection('login')">Login here</a>.</p>
+        </div>
+    </section>
+
+    <section id="profile" class="profile-section">
+        <div class="container">
+            <h2>Your Profile</h2>
+            <p>Welcome back! Manage your settings and view your history here.</p>
+            <div id="profileView">
+                <p><strong>Name:</strong> <span id="profileName">John Doe</span></p>
+                <p><strong>Address:</strong> <span id="profileAddress">123 Main Street, Some City</span></p>
+                <p><strong>Phone:</strong> <span id="profilePhone">+91-1234567890</span></p>
+                <p><strong>Country:</strong> <span id="profileCountry">India</span></p>
+                <p><strong>Last Login:</strong> <span id="profileLastLogin">2025-01-07</span></p>
+                <button onclick="toggleEditProfile()">Edit Profile</button>
+            </div>
+            <div id="profileEdit" style="display: none;">
+                <input type="text" id="editName" placeholder="Full Name">
+                <input type="text" id="editAddress" placeholder="Address">
+                <input type="tel" id="editPhone" placeholder="Phone Number">
+                <input type="text" id="editCountry" placeholder="Country">
+                <input type="date" id="editDob" placeholder="Date of Birth">
+                <button type="button" onclick="saveProfile()">Save Changes</button>
+                <button type="button" onclick="toggleEditProfile()">Cancel</button>
+            </div>
+            <div id="historySection">
+                <h3>Activity History</h3>
+                <ul id="historyList">
+                    <!-- User history items will be dynamically populated -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="textToolkit" class="intro">
+        <div class="container">
+            <h2>Universal Text Toolkit</h2>
+            <p>All-in-One Text Utilities for Everyday Use</p>
+
+            <!-- Smart Text Formatter -->
+            <div>
+                <h3>Smart Text Formatter</h3>
+                <textarea id="formatterInput" placeholder="Enter text to format..."></textarea>
+                <select id="formatterTemplate">
+                    <option value="resume">Resume</option>
+                    <option value="coverLetter">Cover Letter</option>
+                    <option value="invitation">Invitation</option>
+                    <option value="certificate">Certificate</option>
+                </select>
+                <button onclick="formatText()">Format Text</button>
+                <textarea id="formatterOutput" placeholder="Formatted text will appear here..."></textarea>
+            </div>
+
+            <!-- One-Click Text Conversion -->
+            <div>
+                <h3>One-Click Text Conversion</h3>
+                <textarea id="conversionInput" placeholder="Enter text to convert..."></textarea>
+                <button onclick="convertToBulletPoints()">Convert to Bullet Points</button>
+                <button onclick="convertToNumberedList()">Convert to Numbered List</button>
+                <button onclick="convertToTable()">Convert to Table</button>
+                <button onclick="changeCase('upper')">UPPER CASE</button>
+                <button onclick="changeCase('lower')">lower case</button>
+                <button onclick="changeCase('sentence')">Sentence case</button>
+                <textarea id="conversionOutput" placeholder="Converted text will appear here..."></textarea>
+            </div>
+
+            <!-- Cross-Language Clipboard -->
+            <div>
+                <h3>Cross-Language Clipboard</h3>
+                <textarea id="transliterationInput" placeholder="Type in Roman characters..."></textarea>
+                <button onclick="transliterateText()">Transliterate</button>
+                <textarea id="transliterationOutput" placeholder="Transliterated text will appear here..."></textarea>
+            </div>
+
+            <!-- Creative Content Generator -->
+            <div>
+                <h3>Creative Content Generator</h3>
+                <textarea id="creativeInput" placeholder="Enter words for mad-libs..."></textarea>
+                <button onclick="generateCreativeContent()">Generate Content</button>
+                <textarea id="creativeOutput" placeholder="Generated content will appear here..."></textarea>
+            </div>
+
+            <!-- Text-to-Print Designer -->
+            <div>
+                <h3>Text-to-Print Designer</h3>
+                <textarea id="printDesignerInput" placeholder="Enter text for print design..."></textarea>
+                <button onclick="createPrintDesign()">Create Print Design</button>
+                <div id="printDesignOutput" style="border: 1px solid #ccc; padding: 10px; margin-top: 10px;">
+                    <!-- Printable design will appear here -->
+                </div>
+            </div>
+
+            <!-- Dynamic Text Playground -->
+            <div>
+                <h3>Dynamic Text Playground</h3>
+                <textarea id="playgroundInput" placeholder="Enter text for playground..."></textarea>
+                <button onclick="generateAsciiArt()">Generate ASCII Art</button>
+                <button onclick="createWordCloud()">Create Word Cloud</button>
+                <button onclick="encodeText()">Encode Text</button>
+                <button onclick="decodeText()">Decode Text</button>
+                <textarea id="playgroundOutput" placeholder="Output will appear here..."></textarea>
+            </div>
+
+            <!-- Collaborative Notepad -->
+            <div>
+                <h3>Collaborative Notepad</h3>
+                <textarea id="collaborativeNotepad" placeholder="Collaborate in real-time..."></textarea>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Audex. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.4/dist/tesseract.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
