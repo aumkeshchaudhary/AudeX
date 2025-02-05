@@ -1,4 +1,4 @@
-# 👁️ AudeX: Vision-to-Voice Conversion Model
+#  AudeX: Vision-to-Voice Conversion Model
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Website-brightgreen.svg)](https://aumkeshchaudhary.github.io/AudeX_web/)
 
