@@ -1,0 +1,252 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #243B55; /* Changed to a solid blue color */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Sidebar styles */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    background-color: #1B2735; /* Ensure solid background */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 4px 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #d1d1d1;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.sidebar a:hover {
+    background-color: #2E3A4B; /* Solid color for hover */
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Hamburger menu button */
+.menu-btn {
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px 15px;
+    display: none;
+    color: #d1d1d1;
+    z-index: 1000;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #1B2735; /* Ensure solid background */
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #d1d1d1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+nav a:hover {
+    background-color: #2E3A4B; /* Solid color for hover */
+    color: #d1d1d1;
+    border-radius: 5px;
+    border: 2px solid #0a0a0a;
+}
+
+/* Section styles */
+section {
+    padding: 80px 0;
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+.intro, .upload, .help-section, .profile-section {
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    /* Remove the backdrop-filter property */
+    /* backdrop-filter: blur(10px); */
+    margin: 20px auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #1B2735;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 10px 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #2E3A4B; /* Solid color for hover */
+    color: #d1d1d1;
+    transform: translateY(-3px);
+}
+
+input[type="file"], input[type="text"], input[type="password"], input[type="email"], 
+input[type="tel"], input[type="number"], input[type="date"], textarea, select {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff; /* Changed to white */
+    color: #000; /* Changed to black for better readability */
+}
+
+textarea {
+    resize: none;
+    height: 120px;
+}
+
+.toggle {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #d1d1d1;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.toggle a {
+    color: #fff; /* Changed to white */
+}
+
+footer {
+    background-color: #1B2735; /* Ensure solid background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#historyList {
+    list-style: none;
+    padding: 20px;
+    text-align: left;
+}
+
+#historyList li {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .sidebar {
+        padding-top: 60px;
+    }
+
+    .sidebar a {
+        font-size: 1.1em;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    input, textarea {
+        width: 90%;
+    }
+}
