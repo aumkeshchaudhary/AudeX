@@ -65,7 +65,7 @@ npm install
 npm start
 ```
 
-## 💡 Usage
+##  Usage
 
 1. **Upload Image**
    - Click the upload button or drag and drop your image
